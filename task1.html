@@ -1,57 +1,95 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Task 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+        }
+
+        table {
+            width: 60%;
+            margin-bottom: 50px;
+        }
+
+        th, td {
+            padding: 10px;
+            background-color: #a0d9d9;
+        }
+
+        .table1 {
+            border-collapse: collapse;
+        }
+
+        .table1 th, .table1 td {
+            border: 1px solid white;
+        }
+
+     
+        .table2 {
+            border: 2px solid gray;
+            border-radius: 15px;
+            background-color: #a0d9d9;
+            border-collapse: separate;
+            border-spacing: 4px; /* reduced spacing */
+            padding: 10px;
+        }
+
+        .table2 th, .table2 td {
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: #a0d9d9;
+        }
+    </style>
+</head>
 <body>
 
-<h3>Table-Task</h3>
-
-<!-- First Table -->
-<table border="1" bgcolor="#b2ebf2">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
+<table class="table1">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+    </tr>
 </table>
 
-<br><br>
-
 <!-- Second Table -->
-<table border="1" cellpadding="10" cellspacing="5" bgcolor="#b2ebf2">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
+<table class="table2">
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Age</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>80</td>
+    </tr>
 </table>
 
 </body>
