@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bars</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        /* Vertical Navigation Bar */
+        .vertical-nav {
+            width: 150px;
+            border: 2px solid #ccc;
+            margin-bottom: 40px;
+        }
+
+        .vertical-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .vertical-nav li {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .vertical-nav li:last-child {
+            border-bottom: none;
+        }
+
+        .vertical-nav a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .vertical-nav .home {
+            background-color: #ff9900;
+            color: white;
+        }
+
+        .vertical-nav .java {
+            background-color: #b3d9ff;
+        }
+
+        .vertical-nav .css {
+            background-color: #b3d9ff;
+        }
+
+        .vertical-nav .html {
+            background-color: #b3d9ff;
+        }
+
+        .vertical-nav .bootstrap {
+            background-color: #b3d9ff;
+        }
+
+        /* Horizontal Navigation Bar */
+        .horizontal-nav {
+            background-color: #999;
+            border: 1px solid #666;
+        }
+
+        .horizontal-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .horizontal-nav li {
+            border-right: 1px solid #666;
+        }
+
+        .horizontal-nav li:last-child {
+            border-right: none;
+        }
+
+        .horizontal-nav a {
+            display: block;
+            padding: 8px 15px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .horizontal-nav .home {
+            background-color: #666;
+        }
+
+        .horizontal-nav .java {
+            background-color: #6666ff;
+        }
+
+        .horizontal-nav .html {
+            background-color: #999;
+        }
+
+        .horizontal-nav .css {
+            background-color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h3>Vertical Navigation Bar</h3>
+    <div class="vertical-nav">
+        <ul>
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#" class="java">Java</a></li>
+            <li><a href="#" class="css">CSS</a></li>
+            <li><a href="#" class="html">HTML</a></li>
+            <li><a href="#" class="bootstrap">Bootstrap</a></li>
+        </ul>
+    </div>
+
+    <h3>Horizontal Navigation Bar</h3>
+    <div class="horizontal-nav">
+        <ul>
+            <li><a href="#" class="home">Home</a></li>
+            <li><a href="#" class="java">Java</a></li>
+            <li><a href="#" class="html">HTML</a></li>
+            <li><a href="#" class="css">CSS</a></li>
+        </ul>
+    </div>
+</body>
+</html>
