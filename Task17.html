@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 17</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .sidenav {
+            height: 100vh;
+            width: 50px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+            overflow: hidden;
+            border-right: 1px solid #ddd;
+        }
+
+        .sidenav:hover {
+            width: 250px;
+        }
+
+        .nav-item {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item:hover {
+            transform: translateX(10px);
+        }
+
+        .nav-text {
+            position: absolute;
+            left: 60px;
+            top: 15px;
+            color: white;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .sidenav:hover .nav-text {
+            opacity: 1;
+        }
+
+        .green { background-color: #4CAF50; }
+        .blue { background-color: #2196F3; }
+        .red { background-color: #f44336; }
+        .gray { background-color: #757575; }
+    </style>
+</head>
+<body>
+    <div class="sidenav">
+        <button class="nav-item green">
+            <span class="nav-text"></span>
+        </button>
+        
+        <button class="nav-item blue">
+            <span class="nav-text"></span>
+        </button>
+        
+        <button class="nav-item red">
+            <span class="nav-text"></span>
+        </button>
+        
+        <button class="nav-item gray">
+            <span class="nav-text"></span>
+        </button>
+    </div>
+
+    <div style="margin-left: 60px; padding: 20px;">
+        <h2>Hoverable Sidenav Buttons</h2>
+        <p>Hover over the buttons on the left side navigation to open them</p>
+    </div>
+</body>
+</html>
