@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task 18</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: url('C:/Users/LENOVO/Desktop/office.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .profile-avatar {
+            width: 60px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar-head {
+            width: 20px;
+            height: 20px;
+            background: #8B4513;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .avatar-body {
+            width: 40px;
+            height: 25px;
+            background: #4169E1;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .avatar-tie {
+            width: 6px;
+            height: 20px;
+            background: #8B0000;
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .login-title {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #555;
+            color: white;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input::placeholder {
+            color: #aaa;
+        }
+
+        .form-input:focus {
+            border-bottom-color: #4CAF50;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: white;
+            font-size: 12px;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+            accent-color: #4CAF50;
+        }
+
+        .terms-link {
+            color: #aaa;
+            text-decoration: underline;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="profile-image">
+            <div class="profile-avatar">
+                <div class="avatar-head"></div>
+                <div class="avatar-body"></div>
+                <div class="avatar-tie"></div>
+            </div>
+        </div>
+        
+        <h2 class="login-title">LOGIN WINDOW</h2>
+        
+        <form>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Your Email Address" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Your Password" required>
+            </div>
+            
+            <div class="checkbox-container">
+                <input type="checkbox" class="checkbox" id="terms">
+                <label for="terms">I Agree With <a href="#" class="terms-link">Terms & Condition</a></label>
+            </div>
+            
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>
