@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        .form-row {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        label {
+            color: #666;
+            font-size: 16px;
+            width: 80px;
+            text-align: left;
+            margin-top: 8px;
+            margin-right: 15px;
+        }
+
+        .input-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="url"] {
+            width: 180px;
+            height: 25px;
+            padding: 5px;
+            border: 2px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            width: 180px;
+            height: 80px;
+            padding: 5px;
+            border: 2px solid #ccc;
+            font-size: 14px;
+            box-sizing: border-box;
+            resize: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .error {
+            border-color: #e74c3c !important;
+        }
+
+        .error-text {
+            color: #e74c3c;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+
+        button {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 8px 16px;
+            border: 1px solid #999;
+            font-size: 14px;
+            margin-top: 20px;
+            margin-left: 95px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        
+        <form id="registrationForm">
+            <div class="form-row">
+                <label for="name">Name:</label>
+                <div class="input-container">
+                    <input type="text" id="name" name="name">
+                    <span id="nameError" class="error-text">This field is required</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email:</label>
+                <div class="input-container">
+                    <input type="email" id="email" name="email">
+                    <span id="emailError" class="error-text">A valid email address is required</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="website">Website:</label>
+                <div class="input-container">
+                    <input type="url" id="website" name="website">
+                    <span id="websiteError" class="error-text">A valid url is required</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="message">Message:</label>
+                <div class="input-container">
+                    <textarea id="message" name="message"></textarea>
+                    <span id="messageError" class="error-text">This field is required</span>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Show all error messages initially (as in the image)
+        document.addEventListener('DOMContentLoaded', function() {
+            showAllErrors();
+        });
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const website = document.getElementById('website');
+            const message = document.getElementById('message');
+            
+            let isValid = true;
+         
+            hideAllErrors();
+           
+            if (name.value.trim() === '') {
+                showFieldError('name');
+                isValid = false;
+            }
+            
+            if (email.value.trim() === '' || !isValidEmail(email.value)) {
+                showFieldError('email');
+                isValid = false;
+            }
+            
+            if (website.value.trim() === '' || !isValidURL(website.value)) {
+                showFieldError('website');
+                isValid = false;
+            }
+            
+            if (message.value.trim() === '') {
+                showFieldError('message');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                alert('Form submitted successfully!');
+                this.reset();
+                showAllErrors(); // Show errors again after reset
+            }
+        });
+        
+        function showAllErrors() {
+            document.getElementById('name').classList.add('error');
+            document.getElementById('email').classList.add('error');
+            document.getElementById('website').classList.add('error');
+            document.getElementById('message').classList.add('error');
+            
+            document.getElementById('nameError').classList.remove('hidden');
+            document.getElementById('emailError').classList.remove('hidden');
+            document.getElementById('websiteError').classList.remove('hidden');
+            document.getElementById('messageError').classList.remove('hidden');
+        }
+        
+        function hideAllErrors() {
+            document.getElementById('name').classList.remove('error');
+            document.getElementById('email').classList.remove('error');
+            document.getElementById('website').classList.remove('error');
+            document.getElementById('message').classList.remove('error');
+            
+            document.getElementById('nameError').classList.add('hidden');
+            document.getElementById('emailError').classList.add('hidden');
+            document.getElementById('websiteError').classList.add('hidden');
+            document.getElementById('messageError').classList.add('hidden');
+        }
+        
+        function showFieldError(fieldName) {
+            document.getElementById(fieldName).classList.add('error');
+            document.getElementById(fieldName + 'Error').classList.remove('hidden');
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function isValidURL(url) {
+            try {
+                new URL(url);
+                return true;
+            } catch {
+                return false;
+            }
+        }
+        
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', function() {
+                this.classList.remove('error');
+                document.getElementById(this.id + 'Error').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
