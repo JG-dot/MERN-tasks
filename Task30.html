@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alphabetical String Sort Function</title>
+</head>
+<body>
+    <h2>Sort String Letters Alphabetically</h2>
+    <p>Enter a string to sort its letters in alphabetical order:</p>
+    <button onclick="runAlphabeticalSort()">Test Alphabetical Sort Function</button>
+    <div id="result"></div>
+
+    <script>
+        function sortStringAlphabetically(str) {
+           
+            return str.toLowerCase().split('').sort().join('');
+        }
+
+        function runAlphabeticalSort() {
+            let input = prompt("Enter a string to sort alphabetically:");
+            if (input !== null && input !== "") {
+                let sorted = sortStringAlphabetically(input);
+                document.getElementById('result').innerHTML = 
+                    `<p><strong>Input:</strong> "${input}"</p>
+                     <p><strong>Sorted:</strong> "${sorted}"</p>`;
+            }
+        }
+
+    </script>
+</body>
+</html>
