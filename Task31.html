@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Calculator</title>
+</head>
+<body>
+    <h2>JavaScript Basic: Exercise-3</h2>
+    <p>Calculate multiplication and division of two numbers</p>
+    
+    <div>
+        <label>1st Number: </label>
+        <input type="number" id="num1" placeholder="Enter first number">
+    </div>
+    <br>
+    
+    <div>
+        <label>2nd Number: </label>
+        <input type="number" id="num2" placeholder="Enter second number">
+    </div>
+    <br>
+    
+    <div>
+        <button onclick="multiply()">Multiply</button>
+        <button onclick="divide()">Divide</button>
+    </div>
+    <br>
+    
+    <div>
+        <strong>The Result Is:</strong>
+        <div id="result">Enter numbers and click a button</div>
+    </div>
+
+    <script>
+        function multiply() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerHTML = 'Please enter valid numbers';
+                return;
+            }
+            
+            const result = num1 * num2;
+            document.getElementById('result').innerHTML = result;
+        }
+        
+        function divide() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('result').innerHTML = 'Please enter valid numbers';
+                return;
+            }
+            
+            if (num2 === 0) {
+                document.getElementById('result').innerHTML = 'Cannot divide by zero';
+                return;
+            }
+            
+            const result = num1 / num2;
+            document.getElementById('result').innerHTML = result;
+        }
+        
+        // Optional: Allow Enter key to trigger calculation
+        document.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                multiply(); // Default to multiply on Enter
+            }
+        });
+    </script>
+</body>
+</html>
