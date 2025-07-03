@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>25-Minute Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .timer-container {
+            background: white;
+            padding: 60px;
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #5a7a7a;
+            font-size: 48px;
+            margin: 0 0 60px 0;
+            letter-spacing: 8px;
+            font-weight: normal;
+        }
+
+        .time-display {
+            font-size: 64px;
+            color: #333;
+            margin: 60px 0;
+            font-weight: normal;
+        }
+
+        .controls {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+        }
+
+        .start-btn {
+            background-color: #90c695;
+            color: black;
+        }
+
+        .stop-btn {
+            background-color: #ff4444;
+            color: black;
+        }
+
+        .reset-btn {
+            background-color: #90c695;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <h1>TIMER</h1>
+        <div class="time-display" id="timeDisplay">25 : 00</div>
+        <div class="controls">
+            <button class="start-btn" id="startBtn">START</button>
+            <button class="stop-btn" id="stopBtn">STOP</button>
+            <button class="reset-btn" id="resetBtn">RESET</button>
+        </div>
+    </div>
+
+    <script>
+        let seconds = 25 * 60; // 25 minutes
+        let interval;
+        
+        const timeDisplay = document.getElementById('timeDisplay');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        
+        function updateDisplay() {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            timeDisplay.textContent = `${mins.toString().padStart(2, '0')} : ${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function start() {
+            if (!interval) {
+                interval = setInterval(() => {
+                    seconds--;
+                    updateDisplay();
+                    if (seconds <= 0) {
+                        clearInterval(interval);
+                        interval = null;
+                        alert('Time\'s up!');
+                    }
+                }, 1000);
+            }
+        }
+        
+        function stop() {
+            clearInterval(interval);
+            interval = null;
+        }
+        
+        function reset() {
+            clearInterval(interval);
+            interval = null;
+            seconds = 25 * 60;
+            updateDisplay();
+        }
+        
+        startBtn.onclick = start;
+        stopBtn.onclick = stop;
+        resetBtn.onclick = reset;
+        
+        updateDisplay();
+    </script>
+</body>
+</html>
